@@ -719,6 +719,116 @@
     }
 
     /* Process Steps */
+    .about-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 34px;
+      box-shadow: var(--shadow-md);
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .about-photo-wrap {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 3px solid rgba(32, 196, 244, 0.35);
+      box-shadow: var(--shadow-md);
+      background: var(--brand-slate-deep);
+      aspect-ratio: 4 / 5;
+      max-height: 480px;
+      width: 100%;
+    }
+
+    .about-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .about-photo-badge {
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      left: 14px;
+      background: rgba(27, 36, 39, 0.86);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #ffffff;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(32, 196, 244, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .about-photo-badge span.dot {
+      color: var(--brand-cyan);
+      font-weight: 800;
+    }
+
+    .about-content h2 {
+      margin: 0 0 12px;
+      font-size: clamp(1.55rem, 2.8vw, 2.1rem);
+      font-weight: 800;
+      color: var(--brand-slate-dark);
+      line-height: 1.25;
+    }
+
+    .about-content p {
+      margin: 0 0 18px;
+      color: var(--text-muted);
+      font-size: 1.02rem;
+    }
+
+    .about-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px;
+      display: grid;
+      gap: 11px;
+    }
+
+    .about-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.96rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .about-list li::before {
+      content: "✓";
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--brand-cyan-soft);
+      color: var(--brand-cyan-dark);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 0.82rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .about-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
     .process-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1244,10 +1354,18 @@
       .mobile-menu-btn { display: inline-flex; }
       .hero-grid,
       .services-grid,
+      .about-card,
       .process-grid,
       .highlight-box,
       .contact-grid {
         grid-template-columns: 1fr;
+      }
+      .about-card {
+        padding: 22px;
+        gap: 24px;
+      }
+      .about-photo-wrap {
+        max-height: 420px;
       }
       .trust-strip {
         grid-template-columns: 1fr;
@@ -1285,6 +1403,7 @@
 
       <nav class="main-nav" aria-label="ניווט ראשי">
         <a href="#services">שירותים</a>
+        <a href="#about">אודות</a>
         <a href="#process">איך זה עובד</a>
         <a href="#expert">חוות דעת מקצועיות</a>
         <a href="#areas">אזורי שירות</a>
@@ -1309,6 +1428,7 @@
     <div id="mobile-drawer" class="mobile-drawer" aria-label="תפריט מובייל">
       <nav>
         <a href="#services">שירותים</a>
+        <a href="#about">אודות</a>
         <a href="#process">איך זה עובד</a>
         <a href="#expert">חוות דעת מקצועיות</a>
         <a href="#areas">אזורי שירות</a>
@@ -1508,6 +1628,38 @@
             </div>
             <a href="#expert" class="service-link">קראו עוד על חוות דעת ←</a>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / Meet Us -->
+    <section id="about" class="content-section" style="padding-top: 0;">
+      <div class="container">
+        <div class="about-card">
+          <div class="about-photo-wrap">
+            <img src="technician.jpg" alt="רשף מערכות — התקנה ותיקון דודי שמש וחשמל בשטח" loading="lazy" />
+            <div class="about-photo-badge">
+              <span>רשף מערכות • עבודה אישית בשטח</span>
+              <span class="dot" dir="ltr">050-699-9129</span>
+            </div>
+          </div>
+
+          <div class="about-content">
+            <span class="section-eyebrow">נעים להכיר</span>
+            <h2>שירות אישי, אמין ומקצועי — ישירות מהשטח ובלי מתווכים</h2>
+            <p>
+              ב<strong>רשף מערכות</strong> אתם מדברים ישירות עם איש המקצוע שמגיע אליכם לגג או לחדר השירות. כל התקנה, תיקון או בדיקה מתבצעים ביסודיות, בציוד מקצועי ועם דגש על בטיחות, אמינות ועבודה נקייה שנשמרת לאורך שנים.
+            </p>
+            <ul class="about-list">
+              <li>קשר ישיר ואישי — משיחת האבחון הראשונה ועד סיום העבודה</li>
+              <li>שימוש ברכיבים וחלקי חילוף איכותיים ותקניים בלבד</li>
+              <li>שקיפות מלאה באבחון התקלה ובהצעת המחיר לפני תחילת העבודה</li>
+            </ul>
+            <div class="about-cta-row">
+              <a href="tel:+972506999129" class="btn btn-primary">חיוג ישיר: <span dir="ltr">050-699-9129</span></a>
+              <a href="https://wa.me/972506999129" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">שליחת הודעה בוואטסאפ</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
